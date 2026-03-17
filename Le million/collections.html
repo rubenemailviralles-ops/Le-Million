@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collections — Le Million Luxury Jewelry</title>
+  <meta name="description" content="Explore Le Million's full collection of handcrafted luxury rings, necklaces, bracelets and earrings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Le Million" class="logo-img" />
+        <span class="logo-text">LE MILLION</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="collections.html" class="nav-link active">Collections</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <input type="text" id="searchInput" placeholder="Search pieces..." />
+      <button class="search-close" id="searchClose">✕</button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label">Our Universe</p>
+      <h1>The Collections</h1>
+      <p>Every piece is a world unto itself. Explore, discover, desire.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-cat="all">All</button>
+          <button class="filter-tab" data-cat="rings">Rings</button>
+          <button class="filter-tab" data-cat="necklaces">Necklaces</button>
+          <button class="filter-tab" data-cat="bracelets">Bracelets</button>
+          <button class="filter-tab" data-cat="earrings">Earrings</button>
+        </div>
+        <div class="filter-sort">
+          <label>Sort:</label>
+          <select id="sortSelect">
+            <option value="default">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="collectionsGrid"></div>
+    </div>
+  </section>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Selection</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty"><p>Your cart is empty.</p></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total"><span>Total</span><span id="cartTotal">€0</span></div>
+      <a href="#" class="btn btn-primary cart-checkout">Proceed to Checkout</a>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="product-modal" id="productModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-text">LE MILLION</span><p>Handcrafted luxury jewelry from our Paris atelier.</p></div>
+      <div class="footer-links"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="collections.html">Collections</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li><li><a href="#">Returns</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p>hello@lemillion.com</p><p>Paris, France</p><div class="social-icons"><a href="#">IG</a><a href="#">PT</a><a href="#">FB</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 Le Million. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let currentCat = 'all';
+    let currentSort = 'default';
+
+    // Read URL params
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('cat')) currentCat = params.get('cat');
+    if (params.get('search')) document.getElementById('searchInput').value = params.get('search');
+
+    function getFiltered() {
+      let list = [...products];
+      const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+      if (currentCat !== 'all') list = list.filter(p => p.category === currentCat);
+      if (searchVal) list = list.filter(p => p.name.toLowerCase().includes(searchVal) || p.category.toLowerCase().includes(searchVal));
+      if (currentSort === 'price-asc') list.sort((a,b) => a.priceNum - b.priceNum);
+      else if (currentSort === 'price-desc') list.sort((a,b) => b.priceNum - a.priceNum);
+      else if (currentSort === 'name') list.sort((a,b) => a.name.localeCompare(b.name));
+      return list;
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('collectionsGrid');
+      const filtered = getFiltered();
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="text-align:center;padding:80px;color:var(--muted);grid-column:1/-1"><p style="font-size:1.1rem">No pieces found.</p></div>';
+      } else {
+        grid.innerHTML = filtered.map(renderCard).join('');
+      }
+      // re-observe
+      document.querySelectorAll('.product-card').forEach(el => {
+        el.style.opacity = '0'; el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    }
+
+    // Filter tabs
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      if (tab.dataset.cat === currentCat) { tab.classList.add('active'); }
+      else tab.classList.remove('active');
+      tab.addEventListener('click', () => {
+        currentCat = tab.dataset.cat;
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderGrid();
+      });
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', e => {
+      currentSort = e.target.value;
+      renderGrid();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', renderGrid);
+
+    renderGrid();
+  </script>
+</body>
+</html>

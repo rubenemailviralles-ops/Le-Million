@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Million — Luxury Jewelry</title>
+  <meta name="description" content="Le Million — Ultra-premium, handcrafted luxury jewelry. Discover timeless pieces born from rare materials and extraordinary craftsmanship." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Le Million" class="logo-img" />
+        <span class="logo-text">LE MILLION</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="collections.html" class="nav-link">Collections</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search bar -->
+    <div class="search-bar" id="searchBar">
+      <input type="text" id="searchInput" placeholder="Search collections, pieces..." />
+      <button class="search-close" id="searchClose">✕</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. 2024 · Paris</p>
+      <h1 class="hero-title">Jewels Born<br/><em>From Legend</em></h1>
+      <p class="hero-subtitle">One-of-a-kind masterpieces crafted from the world's rarest materials. Each piece carries a soul.</p>
+      <div class="hero-cta">
+        <a href="collections.html" class="btn btn-primary" id="heroExploreBtn">Explore Collections</a>
+        <a href="about.html" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Handcrafted Excellence</span>
+      <span class="dot">◆</span>
+      <span>Rare Materials</span>
+      <span class="dot">◆</span>
+      <span>Timeless Design</span>
+      <span class="dot">◆</span>
+      <span>Paris Atelier</span>
+      <span class="dot">◆</span>
+      <span>Limited Editions</span>
+      <span class="dot">◆</span>
+      <span>Handcrafted Excellence</span>
+      <span class="dot">◆</span>
+      <span>Rare Materials</span>
+      <span class="dot">◆</span>
+      <span>Timeless Design</span>
+      <span class="dot">◆</span>
+      <span>Paris Atelier</span>
+      <span class="dot">◆</span>
+      <span>Limited Editions</span>
+      <span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- FEATURED COLLECTIONS -->
+  <section class="section featured" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Curated Selection</p>
+        <h2 class="section-title">Featured Pieces</h2>
+        <p class="section-desc">Where artistry meets eternity. Discover our most coveted creations.</p>
+      </div>
+      <div class="products-grid" id="featuredGrid"></div>
+      <div class="section-cta">
+        <a href="collections.html" class="btn btn-outline" id="viewAllBtn">View All Collections →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section class="section about-teaser">
+    <div class="container about-teaser-inner">
+      <div class="about-teaser-text">
+        <p class="section-label">Our Philosophy</p>
+        <h2 class="section-title">Crafted for Those<br/>Who Demand More</h2>
+        <p class="about-teaser-desc">Le Million was born from an obsession with perfection. Every gem is chosen by hand, every setting sculpted by master artisans in our Paris atelier. We don't make jewelry. We make heirlooms.</p>
+        <a href="about.html" class="btn btn-outline">Discover Our Story</a>
+      </div>
+      <div class="about-teaser-visual">
+        <div class="about-visual-card">
+          <div class="visual-stat">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Unique Pieces</span>
+          </div>
+          <div class="visual-divider"></div>
+          <div class="visual-stat">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Master Artisans</span>
+          </div>
+          <div class="visual-divider"></div>
+          <div class="visual-stat">
+            <span class="stat-num">40+</span>
+            <span class="stat-label">Countries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section categories">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Shop by Category</p>
+        <h2 class="section-title">Collections</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="collections.html?cat=rings" class="cat-card" id="catRings">
+          <div class="cat-icon">💍</div>
+          <h3>Rings</h3>
+          <p>Eternal promises</p>
+        </a>
+        <a href="collections.html?cat=necklaces" class="cat-card" id="catNecklaces">
+          <div class="cat-icon">📿</div>
+          <h3>Necklaces</h3>
+          <p>Cascading elegance</p>
+        </a>
+        <a href="collections.html?cat=bracelets" class="cat-card" id="catBracelets">
+          <div class="cat-icon">✨</div>
+          <h3>Bracelets</h3>
+          <p>Delicate radiance</p>
+        </a>
+        <a href="collections.html?cat=earrings" class="cat-card" id="catEarrings">
+          <div class="cat-icon">🔮</div>
+          <h3>Earrings</h3>
+          <p>Whispered luxury</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Selection</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <p>Your cart is empty.</p>
+        <a href="collections.html" class="btn btn-outline btn-sm">Browse Collections</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">€0</span>
+      </div>
+      <a href="#" class="btn btn-primary cart-checkout">Proceed to Checkout</a>
+    </div>
+  </aside>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="product-modal" id="productModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">LE MILLION</span>
+        <p>Handcrafted luxury jewelry from our Paris atelier to your world.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>hello@lemillion.com</p>
+        <p>Paris, France</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Pinterest">PT</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Le Million. All rights reserved. Crafted with obsession.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
